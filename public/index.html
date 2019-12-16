@@ -8,8 +8,20 @@
   <script src="./js/bundle.js"></script>
 </head>
 <body>
-
+  <h1>The Amazing To Do list</h1>
   <div id="app">
+  <ul>
+  <li v-for="item in items">
+    <span>{{item}}</span>
+  </li>
+</ul>
+
+
+    <form v-on:submit.prevent="saveNewItem">
+  <label for="new-item">Add a new item to the To Do List:</label>
+  <input v-model="newItem" type="text" id='new-item' />
+  <input type="submit" value="Save new item" />
+</form>
 
   </div>
 
