@@ -5,22 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>To Do List</title>
+  <link rel="stylesheet" href="./css/styles.css">
   <script src="./js/bundle.js"></script>
 </head>
 <body>
   <h1>The Amazing To Do list</h1>
   <div id="app">
+
+<form v-on:submit.prevent="saveNewItem">
+  <label for="new-todo">Add a new item to the To Do List:</label>
+  <input v-model="newTodoItem" type="text" id='new-item' />
+  <h3>Priority</h3>
+  <label for="priority">High</label>
+  <input type="radio" name="high" value ="high" required />
+  <label for="priority">Low</label>
+  <input type="radio" name="low" value ="low" />
+
+  <input type="submit" value="Save new item" />
+</form>
+
   <ul>
   <li v-for="todo in todos">
-    <span>{{todo}}</span>
+    <span id="listItem">{{todo.task}}</span>
   </li>
 </ul>
 
-    <form v-on:submit.prevent="saveNewItem">
-  <label for="new-todo">Add a new item to the To Do List:</label>
-  <input v-model="newTodoItem" type="text" id='new-item' />
-  <input type="submit" value="Save new item" />
-</form>
+
 
   </div>
 

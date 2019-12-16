@@ -1,0 +1,28 @@
+#listItem {
+
+
+  margin: 5px;
+
+}
+
+li {
+  border: solid;
+
+  display: flex;
+  justify-content: flex-start;
+  padding: 5px;
+  margin: 10px;
+
+}
+
+span {
+    width: 90%;
+}
+
+li .high {
+border-color: red;
+}
+
+li .low {
+border-color: green;
+}
